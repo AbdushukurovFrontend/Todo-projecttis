@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    .dropdown-item:hover {
+      background-color: #a1a1a13c;
+    }
+
+    .dropdown-item {
+      margin: 10px 0;
+    }
+    .ul_best {
+      border-radius: 8px;
+      background: rgba(256 256 256 / 40%);
+      backdrop-filter: blur(12px);
+    }
+
+    body {
+      background-image: url(https://todo-app.replit.app/assets/bg.ec602496.png);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-position: center;
+
+      width: 100%;
+      height: 100vh;
+    }
+    .ul_li {
+      padding: 12px 10px;
+      width: 100%;
+      background: rgba(256 256 256 / 40%);
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      cursor: pointer;
+    }
+    .icon {
+      -webkit-box-shadow: 1px 3px 19px 2px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 1px 3px 19px 2px rgba(0, 0, 0, 0.2);
+      box-shadow: 1px 3px 19px 2px rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+    }
+    .input_section {
+      border-radius: 8px 0 0 8px;
+      backdrop-filter: blur(8px);
+      background: rgba(256 256 256 / 40%);
+      padding: 12px 16px;
+      font-size: 16px;
+      border: none;
+      border: 2px solid transparent;
+      transition: 0.3s;
+      font-family: Satoshi Medium, sans-serif;
+      flex: 1;
+    }
+
+    .button_section {
+      background: #1e212f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 16px;
+      gap: 8px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid transparent;
+      border-radius: 0 8px 8px 0;
+    }
+  </style>
+  <body>
+    <section class="container">
+      <div
+        class="text-center mt-5 d-flex justify-content-center align-items-center gap-2"
+      >
+        <i style="font-size: 30px" class="fa-solid fa-circle-check"></i>
+        <h2>Todo App</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="mt-5">
+            <ul id="nest">
+              <h2>Tasks</h2>
+              <!-- <li class="mt-3 d-flex align-items-center justify-content-between ul_li">
+                <div class="d-flex align-items-center gap-2">
+                  <i
+                    id="best"
+                    onclick="cilickcheck()"
+                    style="font-size: 18px"
+                    class="fa-regular fa-circle-check icon"
+                  ></i>
+                  <span>Fix Ul bugs</span>
+                </div>
+
+                <div class="li_icon d-flex gap-2 align-items-center">
+                  <i
+                    id="sapn_2"
+                    onclick="toggleCheckIcon"
+                    style="font-size: 18px"
+                    class="fa-regular fa-star"
+                  ></i>
+
+                  <div class="dropdown">
+                    <button
+                      class="border-0 bg-transparent"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i
+                        style="font-size: 18px"
+                        class="fa-solid fa-ellipsis"
+                      ></i>
+                    </button>
+                    <ul class="dropdown-menu gap-2 border-0 ul_best">
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="fa-solid fa-pen"></i>
+                          Edit Task
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i
+                            style="font-size: 18px"
+                            class="fa-regular fa-circle-check"
+                          ></i>
+                          Mark as completed
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#">
+                          <i class="fa-regular fa-star"></i>
+                          Mark as important
+                        </a>
+                      </li>
+                      <li class="text-danger">
+                        <a class="dropdown-item" href="#">
+                          <i
+                            class="fa-solid fa-trash-can"
+                            style="color: #c20000"
+                          ></i>
+                          Delete task
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li> -->
+
+              <!-- ----------------------------- -->
+            </ul>
+
+            <!-- ----------- -->
+            <ul>
+              <!-- <h2>Tasks</h2> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+            <div class="mb-3 input-group d-flex">
+              <input
+                class="input_section"
+                type="text"
+                id="inpt"
+                placeholder="What do you need to do?"
+              />
+              <button
+                class="button_section"
+                type="button"
+                id="button-addon2"
+                onclick="clickBtn()"
+              >
+                <i class="fa-solid fa-plus" style="color: #ffffff"></i>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const ul = document.getElementById("nest");
+
+      let clickBtn = () => {
+        const value = document.getElementById("inpt").value;
+        const li = document.createElement("li");
+        li.className =
+          "mt-3 d-flex align-items-center justify-content-between ul_li";
+
+        const div = document.createElement("div");
+        div.className = "d-flex align-items-center gap-2";
+
+        const i = document.createElement("i");
+        i.className = "fa-regular fa-circle-check icon";
+        i.id = "best";
+        i.onclick = toggleCheckIcon; // Düzeltildi
+        i.style.fontSize = "18px";
+        div.appendChild(i);
+        const span = document.createElement("span");
+        span.id = "span_id";
+        span.innerHTML = value;
+        div.appendChild(span);
+
+        const li_icon = document.createElement("div");
+        li_icon.className = "li_icon d-flex gap-2 align-items-center";
+        li_icon.innerHTML = `
+    <div class="li_icon d-flex gap-2 align-items-center">
+      <i
+        id="sapn_2"
+        onclick="toggleImportantIcon()" // Düzeltildi
+        style="font-size: 18px"
+        class="fa-regular fa-star"
+      ></i>
+
+      <div class="dropdown">
+        <button
+          class="border-0 bg-transparent"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i
+            style="font-size: 18px"
+            class="fa-solid fa-ellipsis"
+          ></i>
+        </button>
+        <ul class="dropdown-menu gap-2 border-0 ul_best">
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-solid fa-pen"></i>
+              Edit Task
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" onclick="toggleCheckIcon()"> // Düzeltildi
+              <i
+                style="font-size: 18px"
+                class="fa-regular fa-circle-check"
+              ></i>
+              Mark as completed
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" onclick="toggleImportantIcon()"> // Düzeltildi
+              <i class="fa-regular fa-star"></i>
+              Mark as important
+            </a>
+          </li>
+          <li class="text-danger">
+            <a class="dropdown-item" href="#">
+              <i
+                class="fa-solid fa-trash-can"
+                style="color: #c20000"
+              ></i>
+              Delete task
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  `;
+        li.appendChild(div);
+        li.appendChild(li_icon);
+        ul.appendChild(li);
+        document.getElementById("inpt").value = "";
+        document.getElementById("inpt").focus();
+        document.getElementById("button-addon2").focus();
+      };
+
+      function toggleCheckIcon() {
+        const solidIcon = document.querySelector(".fa-solid.fa-circle-check");
+        const regularIcon = document.querySelector(
+          ".fa-regular.fa-circle-check"
+        );
+
+        if (solidIcon && regularIcon) {
+          solidIcon.classList.remove("fa-solid");
+          solidIcon.classList.add("fa-regular");
+          regularIcon.classList.remove("fa-regular");
+          regularIcon.classList.add("fa-solid");
+        }
+      }
+
+      function toggleImportantIcon() {
+        const regularIcon = document.querySelector(".fa-regular.fa-star");
+        const solidIcon = document.querySelector(".fa-solid.fa-star");
+
+        if (solidIcon && regularIcon) {
+          solidIcon.classList.remove("fa-solid");
+          solidIcon.classList.add("fa-regular");
+          regularIcon.classList.remove("fa-regular");
+          regularIcon.classList.add("fa-solid");
+        }
+      }
+    </script>
+  </body>
+</html>
